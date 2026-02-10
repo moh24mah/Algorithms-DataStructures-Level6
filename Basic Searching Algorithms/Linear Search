@@ -1,4 +1,8 @@
-//O(N)
+//Linear Search O(N)
+// Linear Search is a straightforward algorithm that checks every element in a list or array until it finds the target value.
+// If the element is found, the algorithm returns its index. 
+// If the list does not contain the element, it indicates that as well.
+
 using System;
 
 namespace Linear_Search
@@ -19,7 +23,7 @@ namespace Linear_Search
         {
             int[] arr = { 64, 34, 26, 12, 22, 11, 90 };
             
-            int value = 90;
+            int value = 11;
 
             int result = LinearSearch(arr, value);
 
