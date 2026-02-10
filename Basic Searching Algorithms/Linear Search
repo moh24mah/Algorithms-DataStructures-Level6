@@ -1,0 +1,32 @@
+//O(N)
+using System;
+
+namespace Linear_Search
+{
+    internal class Program
+    {
+        static int LinearSearch(int[] arr, int value)
+        {
+            foreach (int index in arr)
+            {
+                if (index == value) return index;
+            }
+
+            return -1;
+        }
+
+        static void Main(string[] args)
+        {
+            int[] arr = { 64, 34, 26, 12, 22, 11, 90 };
+            
+            int value = 90;
+
+            int result = LinearSearch(arr, value);
+
+            if (result == -1)
+                Console.WriteLine($"Element {value} not found in the Array.");
+
+            else Console.WriteLine("Element found at index: " + result);  
+        }
+    }
+}
