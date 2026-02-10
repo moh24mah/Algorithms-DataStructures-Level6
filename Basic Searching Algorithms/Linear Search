@@ -1,4 +1,4 @@
-//Linear Search O(N)
+// Linear Search O(N)
 // Linear Search is a straightforward algorithm that checks every element in a list or array until it finds the target value.
 // If the element is found, the algorithm returns its index. 
 // If the list does not contain the element, it indicates that as well.
