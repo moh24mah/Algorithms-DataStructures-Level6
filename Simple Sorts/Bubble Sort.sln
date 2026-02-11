@@ -1,0 +1,52 @@
+//O(N^2)
+using System;
+
+namespace Bubble_Sort
+{
+    internal class Program
+    {
+        static int[] BubbleSort(int[] arr)
+        {
+            int n = arr.Length, temp = 0;
+
+            //while (n > 0)
+            //{
+                for (int i = 0;  i < n - 1; i++)
+                {
+                    for (int j = 0; j < n - i - 1; j++)
+                    {
+                        if (arr[j + 1] < arr[j])
+                        {
+                            // Swap temp and arr[j]
+                            temp = arr[j + 1];
+                            arr[j + 1] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+
+                //n = n - 1;
+            //}
+
+            return arr;
+        }
+
+        static void Main(string[] args)
+        {
+            int[] arr = { 90, 34, 25, 12, 22, 11, 11, 10 , 11};
+
+            Console.WriteLine("unSorted");
+            
+            foreach (int index in arr)
+                Console.Write(index + " ");
+
+            int[] sortedArr = BubbleSort(arr);
+
+            Console.WriteLine("\n\nSorted Array");
+            foreach (int index in arr)
+                Console.Write(index + " ");
+
+            Console.WriteLine();
+        }
+    }
+}
