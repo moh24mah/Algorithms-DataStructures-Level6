@@ -9,40 +9,21 @@ namespace Selection_Sort
         {
             int[] arr = { 64, 34, 25, 12, 22, 90, 90, 12 };
 
-            Console.WriteLine("unSorted");
-            foreach (int index in arr)
-            {
-                Console.Write($"{index} ");
-            }
+            printSelectedSort(arr, "unSorted");
 
             int[] sortedArrAsc = SelectedSortAsc(arr);
-            Console.WriteLine("\n\nSorted by Selected Sort Descending");
-            foreach (int index in sortedArrAsc)
-            {
-                Console.Write($"{index} ");
-            }
+            printSelectedSort(sortedArrAsc, "\n\nSorted by Selected Sort Descending");
+            
 
             int[] sortedArrDes = SelectedSortDes(arr);
-            Console.WriteLine("\n\nSorted by Selected Sort Ascending");
-            foreach (int index in sortedArrDes)
-            {
-                Console.Write($"{index} ");
-            }
+            printSelectedSort(sortedArrDes, "\n\nSorted by Selected Sort Ascending");
 
             //other function
             int[] asortedArrDes = SelectedSort(arr);
-            Console.WriteLine("\n\nSorted by Selected Sort Descending");
-            foreach (int index in asortedArrDes)
-            {
-                Console.Write($"{index} ");
-            }
+            printSelectedSort(asortedArrDes, "Sorted by Selected Sort Descending");
 
             int[] asortedArrAsc = SelectedSort(arr, false);
-            Console.WriteLine("\n\nSorted by Selected Sort Ascending");
-            foreach (int index in asortedArrAsc)
-            {
-                Console.Write($"{index} ");
-            }
+            printSelectedSort(asortedArrAsc, "Sorted by Selected Sort Ascending");
         }
 
         //Selected Sort Ascending
@@ -116,6 +97,14 @@ namespace Selection_Sort
 
             return arr;
         }
+
+        static void printSelectedSort(int[] arr, string Line)
+        {
+            Console.WriteLine(Line);
+            foreach (int index in asortedArrAsc)
+            {
+                Console.Write($"{index} ");
+            }
+        } 
     }
 }
-    
