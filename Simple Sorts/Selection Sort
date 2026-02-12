@@ -1,0 +1,121 @@
+//O(n^2)
+using System;
+
+namespace Selection_Sort
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = { 64, 34, 25, 12, 22, 90, 90, 12 };
+
+            Console.WriteLine("unSorted");
+            foreach (int index in arr)
+            {
+                Console.Write($"{index} ");
+            }
+
+            int[] sortedArrAsc = SelectedSortAsc(arr);
+            Console.WriteLine("\n\nSorted by Selected Sort Descending");
+            foreach (int index in sortedArrAsc)
+            {
+                Console.Write($"{index} ");
+            }
+
+            int[] sortedArrDes = SelectedSortDes(arr);
+            Console.WriteLine("\n\nSorted by Selected Sort Ascending");
+            foreach (int index in sortedArrDes)
+            {
+                Console.Write($"{index} ");
+            }
+
+            //other function
+            int[] asortedArrDes = SelectedSort(arr);
+            Console.WriteLine("\n\nSorted by Selected Sort Descending");
+            foreach (int index in asortedArrDes)
+            {
+                Console.Write($"{index} ");
+            }
+
+            int[] asortedArrAsc = SelectedSort(arr, false);
+            Console.WriteLine("\n\nSorted by Selected Sort Ascending");
+            foreach (int index in asortedArrAsc)
+            {
+                Console.Write($"{index} ");
+            }
+        }
+
+        //Selected Sort Ascending
+        static int[] SelectedSortAsc(int[] arr)
+        {
+            for (int i = 0; i <= arr.Length - 1; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    int minIndex = 0;
+
+                    // Find the Minimum element in unsorted array
+                    if (arr[j] < arr[i])
+                    {
+                        minIndex = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = minIndex;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //Selected Sort Descending
+        static int[] SelectedSortDes(int[] arr)
+        {
+            for (int i = 0; i <= arr.Length - 1; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    int maxIndex = 0;
+                    
+                    // Find the Maximum element in unsorted array
+                    if (arr[j] > arr[i])
+                    {
+                        maxIndex = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = maxIndex;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //one Selected Sort Function (Ascending, Descending)
+        static int[] SelectedSort(int[] arr, bool des = true) //by default Descending, we can make it with (enum) also
+        {
+            for (int i = 0; i <= arr.Length - 1; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    int Index = 0;
+
+                    // Find the Minimum element in unsorted array
+                    if (des && arr[j] < arr[i])
+                    {
+                        Index = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = Index;
+                    }
+
+                    // Find the Maximum element in unsorted array
+                    else if (!des && arr[j] > arr[i])
+                    {
+                        Index = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = Index;
+                    }
+                }
+            }
+
+            return arr;
+        }
+    }
+}
+    
